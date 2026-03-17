@@ -21,7 +21,7 @@ To set up a new experiment, work with the user to:
 
 Each experiment runs on a single Modal `L40S` GPU for a fixed 5-minute training budget.
 
-- `python modal_runner.py train > run.log 2>&1`
+- `uv run --project .. python modal_runner.py train > run.log 2>&1`
 
 This is the only experiment execution command. Always redirect to `run.log` so the result can be parsed after the run. Do not run `uv` directly for experiments.
 
