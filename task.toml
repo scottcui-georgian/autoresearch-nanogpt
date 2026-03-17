@@ -1,0 +1,22 @@
+[task]
+name = "nanogpt"
+files = ["train.py", "prepare.py"]
+mutable = ["train.py"]
+
+[task.entrypoints]
+train = "train.py"
+prepare = "prepare.py"
+
+[resources]
+gpu = "L40S"
+train_timeout = 1800
+prepare_timeout = 3600
+prepare_cpu = 8
+
+[constraints]
+time_budget = 300
+
+[tracking]
+db = "results.db"
+exp_file = "exp.md"
+legacy_exp_paths = ["autoresearch_runtime/exp.md"]
